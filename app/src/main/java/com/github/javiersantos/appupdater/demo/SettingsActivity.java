@@ -43,7 +43,7 @@ public class SettingsActivity extends PreferenceActivity {
     @Override
     public void setContentView(int layoutResID) {
         ViewGroup contentView = (ViewGroup) LayoutInflater.from(this).inflate(R.layout.activity_settings, new LinearLayout(this), false);
-        Toolbar toolbar = (Toolbar) contentView.findViewById(R.id.toolbar);
+        Toolbar toolbar = contentView.findViewById(R.id.toolbar);
         toolbar.setTitle(R.string.action_settings);
         toolbar.setTitleTextColor(ContextCompat.getColor(this, android.R.color.white));
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
@@ -53,7 +53,7 @@ public class SettingsActivity extends PreferenceActivity {
             }
         });
 
-        ViewGroup contentWrapper = (ViewGroup) contentView.findViewById(R.id.content_wrapper);
+        ViewGroup contentWrapper = contentView.findViewById(R.id.content_wrapper);
         LayoutInflater.from(this).inflate(layoutResID, contentWrapper, true);
         getWindow().setContentView(contentView);
 
